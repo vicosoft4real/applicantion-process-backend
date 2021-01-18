@@ -12,13 +12,7 @@ namespace Hahn.ApplicatonProcess.December2020.Domain.Commands.Applicants.Create
 
     public class CreateApplicantCommand : IRequest<(bool succeed, string message, int id)>, IMapFrom<Applicant>
     {
-        /// <summary>
-        /// Gets or sets the identifier.
-        /// </summary>
-        /// <value>
-        /// The identifier.
-        /// </value>
-        public int Id { get; set; }
+
         /// <summary>
         /// Gets or sets the name of the applicant.
         /// </summary>

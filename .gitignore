@@ -264,6 +264,3 @@ __pycache__/
 *.txt
 *.xml
 
-/src/Domain/Common/StockHistory.cs
-/src/Domain/Entities/ApprovalRequest.cs
-/src/Api/Asset

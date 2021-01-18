@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Hahn.ApplicatonProcess.December2020.Domain.Commands.Applicants.Create;
 using Hahn.ApplicatonProcess.December2020.Domain.Common.Validation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +23,7 @@ namespace Hahn.ApplicatonProcess.December2020.Domain
         public static void AddDomainDependency(this IServiceCollection services)
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            // services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(typeof(CreateApplicantValidation).Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidation<,>));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddHttpClient("HttpClient").AddPolicyHandler(x =>

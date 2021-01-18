@@ -42,7 +42,10 @@ namespace Hahn.ApplicatonProcess.December2020.Web
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CreateApplicantValidation>());
+            services.AddControllers().AddFluentValidation(x =>
+            {
+                x.AutomaticValidationEnabled = false;
+            });
 
             services.AddDomainDependency();
             services.AddPersistence();

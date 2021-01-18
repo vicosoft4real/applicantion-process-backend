@@ -44,7 +44,7 @@ namespace Hahn.ApplicatonProcess.December2020.Web.Controllers
             (bool succeed, string message, int id) = await Mediator.Send(createApplicantCommand);
             if (succeed)
             {
-                createApplicantCommand.Id = id;
+
                 return Created(linkGenerator.GetPathByAction(HttpContext, null, null, new { id = id }), createApplicantCommand.ToResponse<CreateApplicantCommand>());
             }
             return BadRequest(message);
